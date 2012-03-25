@@ -1,0 +1,14 @@
+defaults = {
+	 GSWAdaptor = GSWDefaultAdaptor;
+	 GSWDebugSetConfigFilePath = "/etc/gsweb/HelloGSW.logstate";
+	 GSWHost = "localhost";
+	 GSWPort = 9001;
+	 GSWApplicationBaseURL = "/GSW";
+	 GSWFrameworksBaseURL = "/GSW/frameworks";
+	 GSWLoadFrameworks = (
+	 		   "GSWExtensionsGSW",
+			   "GSWExtensions"
+			   );
+         GSWMonitorAppConfFilePath = "/etc/httpd/conf/GSWebMonitor.conf";
+	 GSWSessionTimeOut = 1200;
+};

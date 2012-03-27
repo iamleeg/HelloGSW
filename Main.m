@@ -5,10 +5,24 @@
 #import "Main.h"
 
 @implementation Main
+{
+  NSDate *accessedAt;
+}
+
+- (id)init {
+  if ((self = [super init])) {
+    accessedAt = [[NSDate date] retain];
+  }
+  return self;
+}
 
 - (NSString *)now {
-  NSDate *theDate = [NSDate date];
-  return [theDate description];
+  return [accessedAt description];
+}
+
+- (void)dealloc {
+  [accessedAt release];
+  [super dealloc];
 }
 
 @end

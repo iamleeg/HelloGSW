@@ -3,11 +3,9 @@
 #endif
 
 #import "Main.h"
+#import "ClickDelay.h"
 
 @implementation Main
-{
-  NSDate *accessedAt;
-}
 
 - (id)init {
   if ((self = [super init])) {
@@ -18,6 +16,12 @@
 
 - (NSString *)now {
   return [accessedAt description];
+}
+
+- (GSWComponent *)nextPage {
+  ClickDelay *nextComponent = (ClickDelay *)[self pageWithName: @"ClickDelay"];
+  nextComponent.startDate = accessedAt;
+  return nextComponent;
 }
 
 - (void)dealloc {

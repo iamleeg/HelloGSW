@@ -1,9 +1,22 @@
-  #ifndef GNUSTEP
-  #include <GNUstepBase/GNUstep.h>
-  #endif
+#ifndef GNUSTEP
+#include <GNUstepBase/GNUstep.h>
+#endif
 
-  #import "ClickDelay.h"
+#import "ClickDelay.h"
 
-  @implementation ClickDelay
+@implementation ClickDelay
 
-  @end
+@synthesize startDate;
+
+- (NSString *)delay {
+  NSDate *now = [NSDate date];
+  NSTimeInterval interval = [now timeIntervalSinceDate: startDate];
+  return [NSString stringWithFormat: @"%.0f", interval];
+}
+
+- (void)dealloc {
+  [startDate release]; startDate = nil;
+  [super dealloc];
+}
+
+@end

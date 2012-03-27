@@ -1,5 +1,8 @@
-  #include <WebObjects/WebObjects.h>
+#include <WebObjects/WebObjects.h>
 
-  @interface ClickDelay:GSWComponent
+@interface ClickDelay:GSWComponent
 
-  @end
+@property (nonatomic, retain) NSDate *startDate;
+@property (nonatomic, readonly) NSString *delay;
+
+@end

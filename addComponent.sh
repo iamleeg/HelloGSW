@@ -7,42 +7,42 @@ if [ "$COMPONENT_NAME" == "No Name" ]; then
     exit 1
 fi
 
-cat > "${COMPONENT_NAME}.h" <<-INTERFACE
-  #include <WebObjects/WebObjects.h>
+cat > "${COMPONENT_NAME}.h" <<INTERFACE
+#include <WebObjects/WebObjects.h>
 
-  @interface ${COMPONENT_NAME}:GSWComponent
+@interface ${COMPONENT_NAME}:GSWComponent
 
-  @end
+@end
 INTERFACE
 
-cat > "${COMPONENT_NAME}.m" <<-IMPLEMENTATION
-  #ifndef GNUSTEP
-  #include <GNUstepBase/GNUstep.h>
-  #endif
+cat > "${COMPONENT_NAME}.m" <<IMPLEMENTATION
+#ifndef GNUSTEP
+#include <GNUstepBase/GNUstep.h>
+#endif
 
-  #import "${COMPONENT_NAME}.h"
+#import "${COMPONENT_NAME}.h"
 
-  @implementation ${COMPONENT_NAME}
+@implementation ${COMPONENT_NAME}
 
-  @end
+@end
 IMPLEMENTATION
 
 mkdir "${COMPONENT_NAME}.wo"
 touch "${COMPONENT_NAME}.wo/${COMPONENT_NAME}.wod"
 
-cat > "${COMPONENT_NAME}.wo/${COMPONENT_NAME}.html" <<-HTML
-  <!DOCTYPE HTML>
-  <html>
-    <head>
-      <title>${COMPONENT_NAME}</title>
-    </head>
-    <body>
-    </body>
-  </html>
+cat > "${COMPONENT_NAME}.wo/${COMPONENT_NAME}.html" <<HTML
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>${COMPONENT_NAME}</title>
+  </head>
+  <body>
+  </body>
+</html>
 HTML
 
 cat > "${COMPONENT_NAME}.wo/${COMPONENT_NAME}.woo" <<-WOO
-  {"WebObjects Release" = "WebObjects 5.0"; encoding = NSUTF8StringEncoding; }
+{"WebObjects Release" = "WebObjects 5.0"; encoding = NSUTF8StringEncoding; }
 WOO
 
 APP_NAME=`grep GSWAPP_NAME GNUmakefile | sed -E s/^GSWAPP_NAME[:space:]*=[:space:]*//`

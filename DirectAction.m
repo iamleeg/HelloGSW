@@ -6,4 +6,8 @@
 
 @implementation DirectAction
 
+- (GSWComponent *)helloAction {
+  return [self pageWithName: @"Main"];
+}
+
 @end

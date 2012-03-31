@@ -8,8 +8,11 @@
 
 - (id)init
 {
-  if (self = [super init]) {
+  if ((self = [super init])) {
     [WOMessage setDefaultEncoding: NSUTF8StringEncoding];
+    NSString *directActionHandlerKey = [[self class] directActionRequestHandlerKey];
+    WORequestHandler *directActionHandler = [self requestHandlerForKey: directActionHandlerKey];
+    [self setDefaultRequestHandler: directActionHandler];
   }
   return self;
 }

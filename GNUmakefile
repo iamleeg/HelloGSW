@@ -6,7 +6,7 @@ HelloGSW_HAS_GSWCOMPONENTS=YES
 HelloGSW_PRINCIPAL_CLASS=HelloGSW
 HelloGSW_GSWAPP_INFO_PLIST=Resources/Info-HelloGSW.plist
 
-HelloGSW_OBJC_FILES=HelloGSW_main.m HelloGSW.m Main.m Session.m ClickDelay.m
+HelloGSW_OBJC_FILES=HelloGSW_main.m HelloGSW.m Main.m Session.m ClickDelay.m DirectAction.m
 HelloGSW_COMPONENTS=Main.wo ClickDelay.wo
 
 ifneq ($(FOUNDATION_LIB),gnu)

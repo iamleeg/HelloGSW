@@ -14,8 +14,8 @@
   return self;
 }
 
-- (NSString *)now {
-  return [accessedAt description];
+- (NSDate *)now {
+  return accessedAt;
 }
 
 - (GSWComponent *)nextPage {

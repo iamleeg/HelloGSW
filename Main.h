@@ -8,7 +8,7 @@
   NSDate *accessedAt;
 }
 
-- (NSString *)now;
+- (NSDate *)now;
 - (GSWComponent *)nextPage;
 
 @end
